@@ -5,7 +5,6 @@
  * main - main block
  * Return: 1
  */
-:
 int main(void)
 {
 	int s;
