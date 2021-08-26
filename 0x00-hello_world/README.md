@@ -18,4 +18,4 @@ At the end of this project ,i will acertain that i am able to explain to anyone,
 13. How does the `main` function influence the return value of the program
   
 LETS DO THIS!!
-[FUN IMAGE](https://media2.giphy.com/media/349qKnoIBHK1i/giphy.gif)
+![FUN IMAGE](https://media2.giphy.com/media/349qKnoIBHK1i/giphy.gif)
