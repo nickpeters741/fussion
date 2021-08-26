@@ -2,9 +2,10 @@
 #include <string.h>
 #include <unistd.h>
 /**
- * Return: Always 0 (Success)
- * 
+ * main - main block
+ * Return: 1
  */
+:
 int main(void)
 {
 	int s;
