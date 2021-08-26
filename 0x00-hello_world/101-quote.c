@@ -2,8 +2,8 @@
 #include <string.h>
 #include <unistd.h>
 /**
- * main - main block
- * Return: 1
+ * Return: Always 0 (Success)
+ * 
  */
 int main(void)
 {
