@@ -1,6 +1,7 @@
-# This repo contains my c foundation practice .i am greatful that i have reached this far and i know its all as aresult of hardwork and determination.As i enbark on this jourtney i would love to kick off with a begginer mortivational quote that keeps me fueled all the way,“Make it work, make it right, make it fast.” – Kent Beck.
+# Introduction
+ This repo contains my c foundation practice .i am greatful that i have reached this far and i know its all as aresult of hardwork and determination.As i enbark on this jourtney i would love to kick off with a begginer mortivational quote that keeps me fueled all the way,“Make it work, make it right, make it fast.” – Kent Beck.
 
-#learning Objectives
+## learning Objectives
 At the end of this project ,i will acertain that i am able to explain to anyone, without the help of google the following;
 1. Why C programming is awesome
 2. Who invented C
@@ -15,3 +16,6 @@ At the end of this project ,i will acertain that i am able to explain to anyone,
 11. What is the official C coding style and how to check your code with `betty-style`
 12. How to find the right header to include in your source code when using a standard library function
 13. How does the `main` function influence the return value of the program
+  
+LETS DO THIS!!
+[FUN IMAGE](https://media2.giphy.com/media/349qKnoIBHK1i/giphy.gif)
