@@ -8,13 +8,15 @@
 
 int main(void)
 {
-	char name[9]  = "Holberton";
-	int i;
+	char s[] = "_putchar";
+	int i = 0;
 
-	for (i = 0; i < 9; i++)
+	while (s[i] != '\0')
 	{
-		_putchar(name[i]);
+		_putchar(s[i]);
+		i++;
 	}
-	_putchar('\n');
+	_putchar(10);
+
 	return (0);
 }
