@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_times_table - function that prints times table for a given number
  *@n: the given number to create the times table
