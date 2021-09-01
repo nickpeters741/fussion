@@ -1,50 +1,70 @@
 #include "main.h"
 
 /**
- * print_times_table - Print the `n` times table, starting with 0.
- * Description: If `n` is greater than 15 or less than 0, print nothing.
- * @n: int type number
- */
-
+ * print_times_table - function that prints times table for a given number
+ *@n: the given number to create the times table
+*/
 void print_times_table(int n)
 {
-	int x = 0, y, z;
+	int a = 0, b = 0;
 
-	if (n > 15 || n < 0)
-		return;
-	while (x <= n)
+	if (n >= 0 && n < 16)
 	{
-		for (y = 0; y <= n; y++)
+		while (a <= n)
 		{
-			z = x * y;
-			if (z > 99)
+			b = 0;
+			while (b <= n)
 			{
-				_putchar(z / 100 + '0');
-				_putchar((z / 10 % 10) + '0');
-				_putchar(z % 10 + '0');
+				if (a * b < 10)
+					comma_spaces_nums(1, a, b);
+				else if (a * b > 9 && a * b < 100)
+					comma_spaces_nums(2, a, b);
+				else
+					comma_spaces_nums(3, a, b);
+				b++;
 			}
-			else if (z > 9)
-			{
-				_putchar(' ');
-				_putchar(z / 10 + '0');
-				_putchar(z % 10 + '0');
-			}
-			else if (y != 0)
-			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar(z + '0');
-			}
-			else
-				_putchar(z + '0');
-
-			if (y != n)
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			_putchar('\n');
+			a++;
 		}
-		_putchar('\n');
-		x++;
 	}
 }
+
+/**
+ * comma_spaces_nums - prints commas, spaces and digits accordingly
+ * @dig: digit value
+ * @a: first multiplier
+ * @b: second multiplier
+*/
+void comma_spaces_nums(int dig, int a, int b)
+{
+	if (b != 0)
+	{
+		int i;
+
+		_putchar(',');
+		if (dig == 1)
+			for (i = 0; i < 3; i++)
+				_putchar(' ');
+		else if (dig == 2)
+			for (i = 0; i < 2; i++)
+				_putchar(' ');
+		else
+			_putchar(' ');
+	}
+	if (dig == 1)
+	{
+		_putchar('0' + a * b);
+	}
+	else if (dig == 2)
+	{
+		_putchar('0' + ((a * b) / 10));
+		_putchar('0' + ((a * b) % 10));
+	}
+	else
+	{
+		_putchar('0' + ((a * b) / 100));
+		_putchar('0' + ((a * b) / 10) % 10);
+		_putchar('0' + ((a * b) % 10));
+	}
+}
+
