@@ -1,6 +1,6 @@
 # 0x06. C - More pointers, arrays and strings
 Hi this repo contains fullfillment of this project.I was tasked with various tasks as shown below and tackled them based on the task requirement step by step.
-[GIF FOR THIS DAY](https://alx-intranet.hbtn.io/images/contents/low_level_programming/projects/happy-clapping.gif)
+![GIF FOR THIS DAY](https://alx-intranet.hbtn.io/images/contents/low_level_programming/projects/happy-clapping.gif)
 
 ## Requirements
 ### General
