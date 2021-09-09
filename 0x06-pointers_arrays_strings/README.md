@@ -470,5 +470,19 @@ julien@ubuntu:~/0x06$
 ```
 
 ## 102-magic.c
-![gif](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/21b4fc5c1b5df84e6ae4fe8807aa359d929e748a.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20210909%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210909T080844Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6e69c49829b768452d121e25cc17661e82d26363667952ec74fc8c2c10a08924)
 
+![gif](https://c.tenor.com/KOwL-etspd8AAAAM/magic-shia-labeouf.gif)
+
+Add one line to `this code`, so that the program prints `a[2] = 98`, followed by a new line.
+
+- You are not allowed to use the variable `a` in your new line of code
+- You are not allowed to modify the variable `p`
+- You can only write one statement
+- You are not allowed to use `,`
+- You are not allowed to code anything else than the line of expected line of code at the expected line
+- Your code should be written at line 19, before the `;`
+- Do not remove anything from the initial code (not even the comments)
+- and don’t change anything but the line of code you are adding (don’t change the spaces to tabs!)
+- You are allowed to use the standard library
+
+```c 
