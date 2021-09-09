@@ -370,3 +370,105 @@ julien@ubuntu:~/0x06$ ./7-1337
 3xp3c7 7h3 b3s7. Pr3p4r3 f0r 7h3 w0rs7. C4pi741iz3 0n wh47 c0m3s.
 julien@ubuntu:~/0x06$
 ```
+
+## 100-rot13.c
+Write a function that encodes a string using rot13.
+
+-Prototype: `char *rot13(char *);`
+- You can only use `if` statement once in your code
+- You can only use two loops in your code
+- You are not allowed to use `switch`
+- You are not allowed to use any ternary operation
+
+```c
+julien@ubuntu:~/0x06$ cat 100-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    char s[] = "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher.\n";
+    char *p;
+
+    p = rot13(s);
+    printf("%s", p);
+    printf("------------------------------------\n");
+    printf("%s", s);
+    printf("------------------------------------\n");
+    p = rot13(s);
+    printf("%s", p);
+    printf("------------------------------------\n");
+    printf("%s", s);
+    printf("------------------------------------\n");
+    p = rot13(s);
+    printf("%s", p);
+    printf("------------------------------------\n");
+    printf("%s", s);
+    return (0);
+}
+julien@ubuntu:~/0x06$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-main.c 100-rot13.c -o 100-rot13
+julien@ubuntu:~/0x06$ ./100-rot13 
+EBG13 ("ebgngr ol 13 cynprf", fbzrgvzrf ulcurangrq EBG-13) vf n fvzcyr yrggre fhofgvghgvba pvcure.
+------------------------------------
+EBG13 ("ebgngr ol 13 cynprf", fbzrgvzrf ulcurangrq EBG-13) vf n fvzcyr yrggre fhofgvghgvba pvcure.
+------------------------------------
+ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple letter substitution cipher.
+------------------------------------
+ROT13 ("rotate by 13 places", sometimes hyphenated ROT-13) is a simple letter substitution cipher.
+------------------------------------
+EBG13 ("ebgngr ol 13 cynprf", fbzrgvzrf ulcurangrq EBG-13) vf n fvzcyr yrggre fhofgvghgvba pvcure.
+------------------------------------
+EBG13 ("ebgngr ol 13 cynprf", fbzrgvzrf ulcurangrq EBG-13) vf n fvzcyr yrggre fhofgvghgvba pvcure.
+julien@ubuntu:~/0x06$ 
+```
+
+## 101-print_number.c
+Write a function that prints an integer.
+
+Prototype: `void print_number(int n);`
+You can only use `_putchar` function to print
+You are not allowed to use `long`
+You are not allowed to use arrays or pointers
+You are not allowed to hard-code special values
+
+```c
+julien@ubuntu:~/0x06$ cat 101-main.c
+#include "main.h"
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    print_number(98);
+    _putchar('\n');
+    print_number(402);
+    _putchar('\n');
+    print_number(1024);
+    _putchar('\n');
+    print_number(0);
+    _putchar('\n');
+    print_number(-98);
+    _putchar('\n');
+    return (0);
+}
+julien@ubuntu:~/0x06$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 101-main.c 101-print_number.c -o 101-print_numbers
+julien@ubuntu:~/0x06$ ./101-print_numbers 
+98
+402
+1024
+0
+-98
+julien@ubuntu:~/0x06$
+```
+
+## 102-magic.c
+![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/21b4fc5c1b5df84e6ae4fe8807aa359d929e748a.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU65GPZGY3%2F20210909%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210909T080844Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6e69c49829b768452d121e25cc17661e82d26363667952ec74fc8c2c10a08924)
+
