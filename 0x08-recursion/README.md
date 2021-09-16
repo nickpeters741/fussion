@@ -107,3 +107,88 @@ julien@ubuntu:~/0x08. Recursion$ ./2-strlen_recursion
 14
 julien@ubuntu:~/0x08. Recursion$
 ```
+## 3-factorial.c
+Write a function that returns the factorial of a given number.
+
+  - Prototype: `int factorial(int n);`
+  - If `n` is lower than 0, the function should return `-1` to indicate an error
+Factorial of `0` is `1`
+
+```c
+julien@ubuntu:~/0x08. Recursion$ cat 3-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = factorial(1);
+    printf("%d\n", r);
+    r = factorial(5);
+    printf("%d\n", r);
+    r = factorial(10);
+    printf("%d\n", r);
+    r = factorial(-1024);
+    printf("%d\n", r);
+    return (0);
+}
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c 3-factorial.c -o 3-factorial
+julien@ubuntu:~/0x08. Recursion$ ./3-factorial 
+1
+120
+3628800
+-1
+julien@ubuntu:~/0x08. Recursion$
+```
+## 4-pow_recursion.c
+Write a function that returns the value of `x` raised to the power of `y.`
+
+  - Prototype: `int _pow_recursion(int x, int y);`
+  - If `y` is lower than `0`, the function should return `-1`
+FYI: The standard library provides a different function: pow. Run `man pow` to learn more.
+
+```c
+julien@ubuntu:~/0x08. Recursion$ cat 4-main.c
+#include "main.h"
+#include <stdio.h>
+
+/**
+ * main - check the code
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+    int r;
+
+    r = _pow_recursion(1, 10);
+    printf("%d\n", r);
+    r = _pow_recursion(1024, 0);
+    printf("%d\n", r);
+    r = _pow_recursion(2, 16);
+    printf("%d\n", r);
+    r = _pow_recursion(5, 2);
+    printf("%d\n", r);
+    r = _pow_recursion(5, -2);
+    printf("%d\n", r);
+    r = _pow_recursion(-5, 3);
+    printf("%d\n", r);
+    return (0);
+}
+julien@ubuntu:~/0x08. Recursion$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 4-pow_recursion.c -o 4-pow
+julien@ubuntu:~/0x08. Recursion$ ./4-pow 
+1
+1
+65536
+25
+-1
+-125
+julien@ubuntu:~/0x08. Recursion$ 
+```
+
