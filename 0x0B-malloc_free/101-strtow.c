@@ -1,110 +1,76 @@
 #include <stdlib.h>
 #include <stdio.h>
-
 /**
  * wordnos - counts no of words in a given string
- * @str: pointer to the string
+ * @s: pointer to the string
  *
  * Return: No. of words in the string (int)
  */
-int wordnos(char *str)
+int wordnos(char *s)
 {
-	int wordno, i, j;
+	int flag, c, w;
 
-	wordno = 0;
-	i = 0;
-	while (*(str + i) != '\0')
+	flag = 0;
+	w = 0;
+
+	for (c = 0; s[c] != '\0'; c++)
 	{
-		if (*(str + i) != 32 && *(str + i) != '\0')
+		if (s[c] == ' ')
+			flag = 0;
+		else if (flag == 0)
 		{
-			j = i;
-			while (*(str + j) != 32 && *(str + j) != '\0')
-				j++;
-			wordno++;
-			i = j - 1;
+			flag = 1;
+			w++;
 		}
-		i++;
 	}
-	return (wordno);
+
+	return (w);
 }
-
 /**
- * cpystr - copies words in string to different elements of 2d array of strings
- * @s: double pointer to a 2D array of strings
- * @str: pointer to string whose words are to be copied
+ * **strtow - splits a string into words
+ * @str: string to split
  *
- * Return: void
- */
-void cpystr(char **s, char *str)
-{
-	int i, j, l, idx;
-
-	i = 0;
-	idx = 0;
-	while (*(str + i) != '\0')
-	{
-		if (*(str + i) != 32 && *(str + i) != '\0')
-		{
-			j = i;
-			l = 0;
-			while (*(str + j) != 32 && *(str + j) != '\0')
-			{
-				s[idx][l] = *(str + j);
-				l++;
-				j++;
-			}
-			s[idx][l] = '\0';
-			idx++;
-			i = j;
-		}
-		i++;
-	}
-}
-
-/**
- * strtow - splits a string into words and stores the words in an array
- * @str: pointer to string
- *
- * Return: double pointer to the array containing the words
+ * Return: pointer to an array of strings (Success)
+ * or NULL (Error)
  */
 char **strtow(char *str)
 {
-	char **s;
-	int wordno, i, j, k, length, idx;
+	char **matrix, *tmp;
+	int i, k = 0, len = 0, words, c = 0, start, end;
 
-	if (str == NULL || str[0] == '\0')
-		return (0);
-	wordno = wordnos(str);
-	s = (char **)malloc(sizeof(char *) * (wordno + 2));
-	if (s == 0 || wordno == 0)
-		return (0);
-	idx = 0;
-	i = 0;
-	while (*(str + i) != '\0')
+	while (*(str + len))
+		len++;
+	words = wordnos(str);
+	if (words == 0)
+		return (NULL);
+
+	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+	if (matrix == NULL)
+		return (NULL);
+
+	for (i = 0; i <= len; i++)
 	{
-		if (*(str + i) != 32 && *(str + i) != '\0')
+		if (str[i] == ' ' || str[i] == '\0')
 		{
-			j = i;
-			length = 0;
-			while (*(str + j) != 32 && *(str + j) != '\0')
+			if (c)
 			{
-				length++;
-				j++;
+				end = i;
+				tmp = (char *) malloc(sizeof(char) * (c + 1));
+				if (tmp == NULL)
+					return (NULL);
+				while (start < end)
+					*tmp++ = str[start++];
+				*tmp = '\0';
+				matrix[k] = tmp - c;
+				k++;
+				c = 0;
 			}
-			*(s + idx) = (char *)malloc(sizeof(char) * (length + 1));
-			if (*(s + idx) == 0)
-			{
-				for (k = 0; k < idx; k++)
-					free(*(s + k));
-				free(s);
-				return (0);
-			}
-			idx++;
-			i = j;
 		}
-		i++;
+		else if (c++ == 0)
+			start = i;
 	}
-	cpystr(s, str);
-	s[wordno] = '\0';
-	return (s);
+
+	matrix[k] = NULL;
+
+	return (matrix);
 }
