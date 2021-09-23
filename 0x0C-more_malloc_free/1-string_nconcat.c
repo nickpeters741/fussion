@@ -1,41 +1,49 @@
-#include "main.h"
 #include <stdlib.h>
-
 /**
- * string_nconcat - concatenates two strings
- *
- * @s1: string 1
- * @s2: string 2
- * @n: first n bytes of s2
- * Return: void pointer
- */
+  * string_nconcat - concatenates two strings.
+  * @s1: pointer to first string.
+  * @s2: pointer to second string from which we'll take first n bytes.
+  * @n: n bytes of s2.
+  *
+  * Return: pointer to newly allocated space in memory.
+  * NULL if malloc fails.
+  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i, len = 0, lens1;
-	char *str;
+	char *nstr;
+	unsigned int len1, len2, size, i, j;
 
-	if (s1 != NULL)
-		for (i = 0; s1[i] != '\0'; i++)
-			len++;
-	lens1 = len;
-	if (s2 != NULL)
-	{
-		if (sizeof(s2) > n)
-			for (i = 0; i < n; i++)
-				len++;
-		else
-			for (i = 0; s2[i] != '\0'; i++)
-				len++;
-	}
-	str = malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	len1 = 0;
+	while (s1[len1] != '\0')
+		len1++;
+	len2 = 0;
+	while (s2[len2] != '\0')
+		len2++;
+
+	if (n >= len2)
+		n = len2;
+	size = len1 + n;
+
+	nstr = malloc((sizeof(char) * size) + 1);
+	if (nstr == NULL)
 		return (NULL);
-	str[len] = '\0';
-	if (s1 != NULL)
-		for (i = 0; s1[i] != '\0'; i++)
-			str[i] = s1[i];
-	if (s2 != NULL)
-		for (; i < len; i++)
-			str[i] = s2[i - lens1];
-	return (str);
+	i = 0;
+	while (i < len1)
+	{
+		nstr[i] = s1[i];
+		i++;
+	}
+	j = 0;
+	while (i < size)
+	{
+		nstr[i] = s2[j];
+		i++;
+		j++;
+	}
+	nstr[i] = '\0';
+	return (nstr);
 }
